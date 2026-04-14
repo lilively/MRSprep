@@ -164,6 +164,7 @@ This script determinates the type identifies spectroscopy files using the SPAR h
 python org_spar.py --input [path] --output [path]
 ```
  ### Organized SDAT/SPAR file structure
+ ```
 Organized SPAR
  ┣ Spectroscopy
  ┃ ┣ LE
@@ -186,6 +187,7 @@ Organized SPAR
  ┃   ┗ Case_2-SE-W.SPAR
  ┣ processed_SPAR_cases.txt
  ┗ failed_cases.txt
+ ```
 # Automated parameter retrieval
 Acquisition parameters like echo time, magnetic field strength or repetition time can be retrieved from both the DICOM files and SPAR/SDAT files.
 ## Parameter retrieval from DICOM files
