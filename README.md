@@ -3,14 +3,14 @@
 A collection of Python scripts for processing magnetic resonance spectroscopy (MRS) data.
  
 ## License
-This project is licensed under CC BY-NC-SA 4.0 Plus Custom Terms.
+This project is licensed 
 
 - **Attribution**: Please cite this work appropriately
 - **NonCommercial**: Commercial use is not permitted
 - **ShareAlike**: Modifications must use the same license
 - **No Warranty**: Software is provided as-is
 
-See [LICENSE](LICENSE) for full details
+
 
 
 
