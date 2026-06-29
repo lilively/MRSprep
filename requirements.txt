@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+lxml
+pillow
+matplotlib
+python-pptx
+pydicom
