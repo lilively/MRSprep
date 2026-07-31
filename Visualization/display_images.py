@@ -230,21 +230,21 @@ def plolt_directory(output_directory, filedir1, filedir2, filedir3=None, filedir
         for f in nomatches:
             print(f'    - {f}')
 
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description='Plot and combine images from multiple directories.')
-    parser.add_argument('--output', type=str, required=True, help='Directory to save  the combined images.')
-    parser.add_argument('--filedir1', type=str, required=True, help='First input directory containing images.')
-    parser.add_argument('--filedir2', type=str, required=True, help='Second input directory containing images.')
-    parser.add_argument('--filedir3', type=str, default=None, help='Optional third input directory containing images.')
-    parser.add_argument('--filedir4', type=str, default=None, help='Optional fourth input directory containing images.')
-    args = parser.parse_args()  
-    plolt_directory(output_directory=args.output, filedir1=args.filedir1, filedir2=args.filedir2, filedir3=args.filedir3, filedir4=args.filedir4)
+# if __name__ == "__main__":
+#     import argparse
+#     parser = argparse.ArgumentParser(description='Plot and combine images from multiple directories.')
+#     parser.add_argument('--output', type=str, required=True, help='Directory to save  the combined images.')
+#     parser.add_argument('--filedir1', type=str, required=True, help='First input directory containing images.')
+#     parser.add_argument('--filedir2', type=str, required=True, help='Second input directory containing images.')
+#     parser.add_argument('--filedir3', type=str, default=None, help='Optional third input directory containing images.')
+#     parser.add_argument('--filedir4', type=str, default=None, help='Optional fourth input directory containing images.')
+#     args = parser.parse_args()  
+#     plolt_directory(output_directory=args.output, filedir1=args.filedir1, filedir2=args.filedir2, filedir3=args.filedir3, filedir4=args.filedir4)
 
 
-# f1= r"C:\Users\lilif\OneDrive\Desktop\Dropbox\Phd\Pipeline testing\Images\MRS images"
-# f2 = r"C:\Users\lilif\OneDrive\Desktop\Dropbox\Phd\Pipeline testing\Images\MRS image_grid"
-# f3 = r"C:\Users\lilif\OneDrive\Desktop\Dropbox\Phd\Pipeline testing\Images\Spectroscopy_Sources"
-# od = r"C:\Users\lilif\OneDrive\Desktop\Dropbox\Phd\Pipeline testing\Images\3Im"
+f2= r"C:\Users\Lili\Dropbox\Phd\Pseudoprogression\Segm_G\Image_0.8"
+f3 = r"C:\Users\Lili\Dropbox\Phd\Pseudoprogression\Segm_G\MRSgrid_0.8"
+f1 = r"C:\Users\Lili\Dropbox\Phd\DATA_MV\pseudoprogression_lt\Segmentation\MRS images"
+od = r"C:\Users\Lili\Dropbox\Phd\Pseudoprogression\Segm_G\Combined"
 
-# plolt_director(filedir1=f1, filedir2=f2, filedir3=f3, output_directory=od)
+plolt_directory(filedir1=f1, filedir2=f2, filedir3=f3, output_directory=od)
