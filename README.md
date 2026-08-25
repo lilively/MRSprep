@@ -37,8 +37,8 @@ The pipeline is built to handle both single voxel (SV) and multi voxel (MV) file
 
 # Preprocessing and organization
 
-Both for DICOM and SPAR/SDAT data acquisition are stored in folders named according to the case IDs. The files within these folders may contain additional information in their filenames, where “Case_X” represents the unique identifier, “C” stand for short echo and “L” for long echo and “M” for water suppressed metabolite tiles and “W” water unsuppressed suppressed acquisitions.
-This naming is not consistent for all files, and for many instances the echo time and the acquisition type can only be determined by opening the file in JMRUI and visually accessing the spectra or by checking the header parameters in the SPAR file.
+Both for DICOM and SPAR/SDAT data acquisition are stored in folders named according to the case IDs. The files within these folders may contain additional information in their filenames, where “Case_X” represents the unique identifier, “C” stand for short echo and “L” for long echo and “M” for water suppressed metabolite files and “W” water unsuppressed acquisitions.
+This naming is not consistent for all files, and for many instances the echo time and the acquisition type can only be determined by opening the file in JMRUI and visually assessing the spectra or by checking the header parameters in the SPAR file.
 ## Original DICOM file structure
 **Note:** Any deviation from this structure may require modifying the pipeline to ensure combability.
 ```
@@ -100,7 +100,7 @@ DATA SV MRUI
 ```
 ## Organizing MRUI files
 `org_mrui.py`
-Determine if mrui file is water or metabolite file from singal order and copies them to folders. 
+Determine if mrui file is water or metabolite file from signal order and copies them to folders. 
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
@@ -287,7 +287,7 @@ This script changes the TissueType element of the XML files based on IDs provide
 
 **Usage:**
 ```bash 
-python label_xml.py --xml_folder [path] --label_excel [path] --id-col PatientID --output [path] --mrui [path]
+python label_xml.py --xml_folder [path] --label_excel [path] --id_col PatientID --label_col Diagnoses --output [path]
 ```
 ## Renormalize in range
 `filter_renormalize.py`
@@ -404,19 +404,19 @@ This script creates a PowerPoint presentation from images in a specified directo
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-|--direcotry	-|Directory containing image files|required
+|--directory	-|Directory containing image files|required
 |--output	|Directory to save the PowerPoint presentation|required
-|--ppt_name	|Second input directory containing images|required
+|--ppt_name	|Name of the output presentation|required
 |--title	|Filename as title for each slide (without extension)|optional
 |--help	|Show help message|
 
 **Usage:**
 ```bash
-Python ppt_create.py --directory [path] --output [path] --ppt_name [filename]—tilte [True]
+python ppt_create.py --directory [path] --output [path] --ppt_name [filename]—tilte [True]
 ```
 # Analysis
 ## Concatenate SpectraClassifier datasets
-`concat_spectra.py`
+`concat_data.py`
 This script identifies common cases from short and long echo Spectra Classifier files and removes the non-common cases. The new datasets can be concatenated in the analysis step. 
 **Parameters:**
 
@@ -429,5 +429,5 @@ This script identifies common cases from short and long echo Spectra Classifier 
 
 **Usage:**
 ```bash
-python concatenate_data.py –xml1 [path] –xml2 [path] --output [path] 
+python concatenate_data.py --xml1 [path] --xml2 [path] --output [path] 
 ```
