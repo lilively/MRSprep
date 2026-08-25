@@ -5,8 +5,7 @@ A collection of Python scripts for processing magnetic resonance spectroscopy (M
 ## Citation
 If you use this software in your research, please cite:
 
-
-
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.21027885-383B96?style=for-the-badge)](https://doi.org/10.5281/zenodo.21027885)
 
 
 
@@ -40,7 +39,7 @@ The pipeline is built to handle both single voxel (SV) and multi voxel (MV) file
 Both for DICOM and SPAR/SDAT data acquisition are stored in folders named according to the case IDs. The files within these folders may contain additional information in their filenames, where “Case_X” represents the unique identifier, “C” stand for short echo and “L” for long echo and “M” for water suppressed metabolite files and “W” water unsuppressed acquisitions.
 This naming is not consistent for all files, and for many instances the echo time and the acquisition type can only be determined by opening the file in JMRUI and visually assessing the spectra or by checking the header parameters in the SPAR file.
 ## Original DICOM file structure
-**Note:** Any deviation from this structure may require modifying the pipeline to ensure combability.
+**Note:** Any deviation from this structure may require modifying the pipeline to ensure compatibility.
 ```
 Data DICOM
  ┣ Case_1
@@ -75,7 +74,7 @@ This script identifies T1 weighted images and spectroscopy files and determines 
 python org_dicom.py --input [path] --output [path]
 ```
 ## Generated file structure
-Detailed logs for processed and failed cases are generated as simple text files are generated for each run.
+Detailed logs for processed and failed cases are generated for each run in a text file.
 ```
 Organized DICOM
  ┣ Images
@@ -232,7 +231,7 @@ Compare the existence of various file types based on potential cases from excel.
 | `--sheet` | Excel sheet name | Cases |
 | `--help` | Show help message | |
 
-*At least one data source folder (–mrui, –xml, –dicom, or –spar) should be provided
+*At least one data source folder (-–mrui, –-xml, –-dicom, or –-spar) should be provided
 ### Usage
 ```bash
 python validate_files.py --cases [path] --id-col [column_name] --echo [SE/LE] --output [path] --mrui [path] --xml [path] --dicom [path] --spar [path]
@@ -396,7 +395,7 @@ Create combined plots from images located in multiple input directories and save
 
 **Usage**
 ```bash
-python plot_directory.py --output_directory [path] --filedir1 [path] --filedir2 [path] --filedir3 [path] --filedir4 [path]
+python display_images.py --output_directory [path] --filedir1 [path] --filedir2 [path] --filedir3 [path] --filedir4 [path]
 ```
 ## Create a PowerPoint presentation from images from a directory
 `ppt_create.py`
@@ -412,7 +411,7 @@ This script creates a PowerPoint presentation from images in a specified directo
 
 **Usage:**
 ```bash
-python ppt_create.py --directory [path] --output [path] --ppt_name [filename]—tilte [True]
+python ppt_create.py --directory [path] --output [path] --ppt_name [filename] --tilte [True]
 ```
 # Analysis
 ## Concatenate SpectraClassifier datasets
