@@ -62,7 +62,7 @@ Data DICOM
 ```
 ## Organizing DICOM file structure
 `org_dicom.py` 
-This script identifies T1 weighted images and spectroscopy files and determinates the echo type using the pydicom python package.
+This script identifies T1 weighted images and spectroscopy files and determines the type of spectroscopy files using the pydicom python package.
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
