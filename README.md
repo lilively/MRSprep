@@ -5,7 +5,7 @@ A collection of Python scripts for processing magnetic resonance spectroscopy (M
 ## Citation
 If you use this software in your research, please cite:
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.21027885-383B96?style=for-the-badge)](https://doi.org/10.5281/zenodo.21027885)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.21027885-2ebf61?style=for-the-badge)](https://doi.org/10.5281/zenodo.21027885)
 
 
 
