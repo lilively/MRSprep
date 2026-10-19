@@ -33,6 +33,11 @@ The pipeline is built to handle both single voxel (SV) and multi voxel (MV) file
 - JMRUIXML-MV
 - Spectra Classifier matrix
  
+# Overview
+
+<p align="center">
+  <img src="docs/pipeline_overview.png" alt="MRSprep workflow: input data, jMRUI processing, automated Python quality control, expert review, selection status and analysis" width="900">
+</p>
 
 # Preprocessing and organization
 
