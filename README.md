@@ -315,13 +315,13 @@ Retrieve SNR values from a directory of XML files and return as an Excel.
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--xml_directory` | Path to the directory containing XML files | required |
-| `--output_directory` | Directory to save the output Excel file| required |
-| `--output_filename` | Output Excel filename (without extension) | required |
+| `--directory` | Path to the directory containing XML files | required |
+| `--output` | Directory to save the output Excel file | required |
+| `--filename` | Output Excel filename (without extension) | required |
 
 **Usage**
 ```bash
-python get_snr.py --xml_directory [path] --output_directory [path] --output_filename [path]
+python get_snr.py --directory [path] --output [path] --filename [filename]
 ```
 ## Extract full width at half maximum (FWHM) from JMRUI files
 `get_fwhm.py`
