@@ -141,18 +141,18 @@ DATA SV SPAR
  ┃ ┣ Case_1-SE-W.SDAT
  ┃ ┗ Case_1-SE-W.SPAR
  ┗ Case_2
-   ┣ Case_1-SE-M.SDAT
-   ┣ Case_1-SE-M.SPAR
-   ┣ Case_1-SE-W.SDAT
-   ┣ Case_1-SE-W.SPAR
-   ┣ Case_1-LE-M.SDAT
-   ┣ Case_1-LE-M.SPAR
-   ┣ Case_1-LE-W.SDAT
-   ┗ Case_1-LE-W.SPAR
+   ┣ Case_2-SE-M.SDAT
+   ┣ Case_2-SE-M.SPAR
+   ┣ Case_2-SE-W.SDAT
+   ┣ Case_2-SE-W.SPAR
+   ┣ Case_2-LE-M.SDAT
+   ┣ Case_2-LE-M.SPAR
+   ┣ Case_2-LE-W.SDAT
+   ┗ Case_2-LE-W.SPAR
  ```
  ## Organizing SDAT/SPAR file structure
  `org_spar.py`  
-This script determinates the type identifies spectroscopy files using the SPAR header information.
+This script identifies spectroscopy files and determines their type using the SPAR header information.
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
@@ -211,7 +211,7 @@ python parameters_dicom.py --input [path] --parameterList [param1] [param2] ... 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
 | `--input` | Path to the folder of the organized SPAR/SDAT files | required |
-| `--parameterList` | List of DICOM parameters to extract | required |
+| `--parameterList` | List of SPAR parameters to extract | required |
 | `--output` | Path to the output directory | required |
 | `--help` | Show help message | |
 
@@ -236,7 +236,7 @@ Compare the existence of various file types based on potential cases from excel.
 | `--sheet` | Excel sheet name | Cases |
 | `--help` | Show help message | |
 
-*At least one data source folder (-–mrui, –-xml, –-dicom, or –-spar) should be provided
+*At least one data source folder (--mrui, --xml, --dicom, or --spar) should be provided
 ### Usage
 ```bash
 python validate_files.py --cases [path] --id-col [column_name] --echo [SE/LE] --output [path] --mrui [path] --xml [path] --dicom [path] --spar [path]
@@ -270,7 +270,7 @@ This script renames files in a directory by replacing a specified pattern in fil
 
 **Usage:**
 ```bash
-python replace_pattern.py --directory [path] --old_pattern OLD --new_pattern NEW
+python replace_pattern.py [path] --old_pattern OLD --new_pattern NEW
 ```
 
 # Postprocessing xml files:
@@ -302,7 +302,7 @@ This script filters and renormalizes XML files to a new ppm range.
 | `--input`  | Path to the folder containing the XML files|  required|
 | `--output`  | Path to the output directory|  required|
 | `--ppm_range`  | New ppm range|  required|
-| `--help`  | Show help message|  required|
+| `--help`  | Show help message|  |
 
 **Usage:**
 ```bash 
@@ -356,12 +356,12 @@ Merge SNR and FWHM data with case files and add quality status based on specifie
 | `--fwhm_path` | Path to the Excel file containing FWHM data | optional |
 | `--fwhm_id` | Column name for case IDs in the FWHM data file (required if fwhm_path is provided) | optional |
 | `--output` | Directory to save the output Excel file | required |
-| `--filename` |Name of the output Excel file (without extension) | required |
+| `--filename` | Name of the output Excel file, including the .xlsx extension | required |
 
 **Usage**
 
 ```bash
-python add_status.py --cases [path] --data_id [column_name] --snr_path [path] --snr_id [column_name] --output [path] --filename [filename]
+python add_status.py --cases [path] --data_id [column_name] --snr_path [path] --snr_id [column_name] --output [path] --filename [filename.xlsx]
 ```
 ## Move or Copy Files Based on Status
 `move_status.py`
@@ -392,7 +392,7 @@ Create combined plots from images located in multiple input directories and save
 **Parameters**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--output_directory` | Directory to save the combined images | required |
+| `--output` | Directory to save the combined images | required |
 | `--filedir1` | First input directory containing images | required |
 | `--filedir2` | Second input directory containing images | required |
 | `--filedir3` | Optional third input directory containing images | optional |
@@ -400,7 +400,7 @@ Create combined plots from images located in multiple input directories and save
 
 **Usage**
 ```bash
-python display_images.py --output_directory [path] --filedir1 [path] --filedir2 [path] --filedir3 [path] --filedir4 [path]
+python display_images.py --output [path] --filedir1 [path] --filedir2 [path] --filedir3 [path] --filedir4 [path]
 ```
 ## Create a PowerPoint presentation from images from a directory
 `ppt_create.py`
@@ -410,17 +410,17 @@ This script creates a PowerPoint presentation from images in a specified directo
 |-----------|-------------|---------|
 |--directory	-|Directory containing image files|required
 |--output	|Directory to save the PowerPoint presentation|required
-|--ppt_name	|Name of the output presentation|required
+|--ppt_name	|Name of the output presentation (without extension)|images_presentation
 |--title	|Filename as title for each slide (without extension)|optional
 |--help	|Show help message|
 
 **Usage:**
 ```bash
-python ppt_create.py --directory [path] --output [path] --ppt_name [filename] --tilte [True]
+python ppt_create.py --directory [path] --output [path] --ppt_name [filename] --title True
 ```
 # Analysis
 ## Concatenate SpectraClassifier datasets
-`concat_data.py`
+`concatenate_data.py`
 This script identifies common cases from short and long echo Spectra Classifier files and removes the non-common cases. The new datasets can be concatenated in the analysis step. 
 **Parameters:**
 
