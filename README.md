@@ -372,16 +372,16 @@ Move or copy files to an output directory based on status labels specified in an
 **Parameters:**
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `--excel_file` | Path to the Excel file containing file statuses | required |
-| `--working_folder` | Path to the folder containing files to be moved or copied | required |
-| `--output_directory` | Path to the output directory where files will be organized | required |
+| `--cases` | Path to the Excel file containing file statuses | required |
+| `--directory` | Path to the folder containing files to be moved or copied | required |
+| `--output` | Path to the output directory where files will be organized | required |
 | `--id_col` | Column name for IDs in the Excel file | required |
-| `--status_label` | The status label indicating which files to move or copy | required |
-| `--mode` | Operation mode: 'move' or 'copy' | required|
+| `--status` | The status label indicating which files to move or copy (e.g. Selected) | required |
+| `--mode` | Operation mode: 'move' or 'copy' | copy |
 
 **Usage**
 ```bash
-python move_status.py --excel_file [path] --working_folder [path] --output_directory [path] --id_col [column_name] --status_label [status] --mode [move/copy]
+python move_status.py --cases [path] --directory [path] --output [path] --id_col [column_name] --status [status] --mode [move/copy]
 ```
 
 # Visualization
