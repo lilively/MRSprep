@@ -59,7 +59,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Create a PowerPoint presentation from images in a directory.')
     parser.add_argument('--directory', type=str, required=False, help='Directory containing image files.')
     parser.add_argument('--output', type=str, required=False, help='Directory to save the PowerPoint presentation.')
-    parser.add_argument('--ppt_name', type=str, default='images_presentation.pptx', help='Name of the output PowerPoint file.')
+    parser.add_argument('--ppt_name', type=str, default='images_presentation', help='Name of the output PowerPoint file (without extension).')
     parser.add_argument('--title', type=str, default=None, help='Filename as title for each slide.')
     args = parser.parse_args()  
 

@@ -90,14 +90,14 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Move or copy files based on status in an Excel file.")
     parser.add_argument("--cases", type=str, help="Path to the Excel file containing file statuses.")
-    parser.add_argument("--directrory", type=str, help="Path to the folder containing files to be moved or copied.")
+    parser.add_argument("--directory", type=str, help="Path to the folder containing files to be moved or copied.")
     parser.add_argument("--output", type=str, help="Path to the output directory.")
 
     parser.add_argument("--id_col", type=str, help="Column name for IDs in the Excel file.")
     parser.add_argument("--status", type=str, help="The status label indicating files to be moved or copied.")
     parser.add_argument("--mode", type=str, choices=['move', 'copy'], default='copy', help="Operation mode: 'move' or 'copy'. Default is 'copy'.")  
     args = parser.parse_args()
-    move_status(excel_file=args.cases, working_folder=args.directrory, output_directory=args.output, id_col=args.id_col, status_label=args.status, mode=args.mode)
+    move_status(excel_file=args.cases, working_folder=args.directory, output_directory=args.output, id_col=args.id_col, status_label=args.status, mode=args.mode)
                         
     
 

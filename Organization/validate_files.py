@@ -294,7 +294,7 @@ def main():
     df_result = validate_files(
         potential_case_path=args.cases,
         id_col=args.id_col,
-        output_directory=args.output_dir,
+        output_directory=args.output,
         echo_filter=args.echo,
         mrui_folder=args.mrui,
         xml_folder=args.xml,
